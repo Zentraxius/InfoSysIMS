@@ -1,35 +1,37 @@
 Coverage: 34%
-# Project Title
+# InfoSys IMS Project
 
-One Paragraph of project description goes here
+A project designed to test and implement a number of business applicable features and best practices.
+
+Including AGILE development with Jira, Entity Relationship Diagrams, Java to MySql connections and database security.
+
+Maven packaging and Junit testing and coverage to a minimum of 80%
+
+Project should allow a user to perform full CRUD functionality to customers, orders, and products
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Once the project is cloned to your local device, in src/main/resources create a file db.properties and fill out this information
+
+db.url=
+
+db.user=
+
+db.password=
 
 ### Prerequisites
 
 What things you need to install the software and how to install them
 
-```
-Give examples
-```
+MySql is needed for project to run
+
+Java version 14 or higher recommended
+
+*Eclipse workspace used with Maven
 
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
 
 End with an example of getting some data out of the system or using it for a little demo
 
@@ -70,11 +72,11 @@ Add additional notes about how to deploy this on a live system
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning.
+We use [GitHub](https://github.com/) for version control
 
 ## Authors
-
-* **Chris Perrins** - *Initial work* - [christophperrins](https://github.com/christophperrins)
+* **Cody Fritz** - *Main developer* - [zentraxius](https://github.com/Zentraxius)
+* **Chris Perrins** - *Initial work and template* - [christophperrins](https://github.com/christophperrins)
 
 ## License
 
@@ -84,6 +86,6 @@ This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+*Google for always knowing the way 
+
+*Chester for always knowing how to fix a problem
