@@ -69,8 +69,11 @@ Add additional notes about how to deploy this on a live system
 ## Built With
 
 * [Maven](https://maven.apache.org/) - Dependency Management
+* [Eclipse](https://www.eclipse.org/) - Workspace/Developer Environment
+* [Java](https://www.java.com/en/) - Programming Language
+* [MySql](https://www.mysql.com/) - Database
 
-## Versioning
+## Version Control
 
 We use [GitHub](https://github.com/) for version control
 
