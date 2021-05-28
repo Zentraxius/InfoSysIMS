@@ -5,16 +5,24 @@ public class Customer {
 	private Long id;
 	private String firstName;
 	private String surname;
+	private int customerAge;
 
-	public Customer(String firstName, String surname) {
+	public Customer(String firstName, String surname, int customerAge) {
 		this.setFirstName(firstName);
 		this.setSurname(surname);
+		this.setAge(customerAge);
 	}
 
-	public Customer(Long id, String firstName, String surname) {
+	public void setAge(int customerAge) {
+	this.setCustomerAge(customerAge);
+		
+	}
+
+	public Customer(Long id, String firstName, String surname, int customerAge) {
 		this.setId(id);
 		this.setFirstName(firstName);
 		this.setSurname(surname);
+		this.setCustomerAge(customerAge);
 	}
 
 	public Long getId() {
@@ -43,7 +51,7 @@ public class Customer {
 
 	@Override
 	public String toString() {
-		return "id:" + id + " first name:" + firstName + " surname:" + surname;
+		return "id: " + id + "| first name: " + firstName + "| surname: " + surname + "| age: " + customerAge;
 	}
 
 	@Override
@@ -81,6 +89,14 @@ public class Customer {
 		} else if (!surname.equals(other.surname))
 			return false;
 		return true;
+	}
+
+	public int getCustomerAge() {
+		return customerAge;
+	}
+
+	public void setCustomerAge(int customerAge) {
+		this.customerAge = customerAge;
 	}
 
 }
