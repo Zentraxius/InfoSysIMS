@@ -44,9 +44,11 @@ public class CustomerController implements CrudController<Customer> {
 	@Override
 	public Customer create() {
 		LOGGER.info("Please enter a first name");
-		String firstName = utils.getString();
+		String firstNameTemp = utils.getString();
+		String firstName = firstNameTemp.substring(0,1).toUpperCase() + firstNameTemp.substring(1);
 		LOGGER.info("Please enter a surname");
-		String surname = utils.getString();
+		String surnameTemp = utils.getString();
+		String surname = surnameTemp.substring(0,1).toUpperCase() + surnameTemp.substring(1);
 		Customer customer = customerDAO.create(new Customer(firstName, surname));
 		LOGGER.info("Customer created");
 		return customer;
