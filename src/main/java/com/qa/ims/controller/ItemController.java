@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.qa.ims.persistence.dao.ItemDao;
+import com.qa.ims.persistence.dao.ItemDAO;
 import com.qa.ims.persistence.domain.Item;
 import com.qa.ims.utils.Utils;
 
@@ -13,7 +13,7 @@ public class ItemController implements CrudController<Item> {
 
 	public static final Logger LOGGER = LogManager.getLogger();
 
-	private ItemDao itemDAO;
+	private ItemDAO itemDAO;
 	private Utils utils;
 
 	public ItemController(ItemDAO itemDAO, Utils utils) {
@@ -33,16 +33,12 @@ public class ItemController implements CrudController<Item> {
 
 	@Override
 	public Item create() {
-		LOGGER.info("Please enter a first name");
-		String firstNameTemp = utils.getString();
-		String firstName = firstNameTemp.substring(0,1).toUpperCase() + firstNameTemp.substring(1);
-		LOGGER.info("Please enter a surname");
-		String surnameTemp = utils.getString();
-		String surname = surnameTemp.substring(0,1).toUpperCase() + surnameTemp.substring(1);
-		LOGGER.info("Please enter the age");
-		String tempAge = utils.getString();
-		int itemAge = Integer.parseInt(tempAge);
-		Item item = itemDAO.create(new Item(firstName, surname, itemAge));
+		LOGGER.info("Please the item name");
+		String itemName = utils.getString();
+		LOGGER.info("Please enter the value");
+		String itemValueTemp = utils.getString();
+		Double itemValue = Double.parseDouble(itemValueTemp);
+		Item item = itemDAO.create(new Item(itemName, itemValue));
 		LOGGER.info("Item created");
 		return item;
 	}
@@ -51,14 +47,12 @@ public class ItemController implements CrudController<Item> {
 	public Item update() {
 		LOGGER.info("Please enter the id of the item you would like to update");
 		Long id = utils.getLong();
-		LOGGER.info("Please enter a first name");
-		String firstName = utils.getString();
-		LOGGER.info("Please enter a surname");
-		String surname = utils.getString();
-		LOGGER.info("Please enter the age");
-		String tempAge = utils.getString();
-		int itemAge = Integer.parseInt(tempAge);
-		Item item = itemDAO.update(new Item(id, firstName, surname, itemAge));
+		LOGGER.info("Please enter the new item name");
+		String itemName = utils.getString();
+		LOGGER.info("Please enter the new item value");
+		String itemValueTemp = utils.getString();
+		Double itemValue = Double.parseDouble(itemValueTemp);
+		Item item = itemDAO.update(new Item(id, itemName, itemValue));
 		LOGGER.info("Item Updated");
 		return item;
 	}
